@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% from "macros/blog.html" import render_blog_post %}
+{% from "macros/pagination.html" import render_pagination %}
+{% block title %}{{ this.title }}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+<div class="image-wrap">
+    <img src=
+    "{{ '/static/images/banner.png'|url }}"
+    alt=" feature image">
+</div><!-- /.image-wrap -->
+{% endblock %}
+
+{% block body %}
+<div id="index">
+    <h3>Blog</h3>
+    {% for child in this.pagination.items %}
+        {% if child._data._model == "posts" %}
+            {% for blogpost in child.pagination.items %}
+                <article>
+                    <h2><a href="{{ blogpost|url }}">{{ blogpost.title }}</a></h2>
+                    <p>{{ blogpost.excerpt|truncate(140) }}</p>
+                </article>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

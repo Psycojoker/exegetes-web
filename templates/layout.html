@@ -1,0 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="fr"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="fr"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>exegetes.eu.org</title>
+    <meta name="description" content="Dossiers contentieux et recours des exégètes amateurs (FDN, La Quadrature du Net, Fédération FDN)">
+    <meta name="keywords" content="fdn, ffdn, fédération, la quadrature, droit, loi, renseignement, surveillance, filtrage, web, internet, censure">
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="exegetes.eu.org">
+    <meta name="twitter:description" content="Dossiers contentieux et recours des exégètes amateurs (FDN, La Quadrature du Net, Fédération FDN)">
+    <meta name="twitter:site" content="@lesExegetes">
+    <meta name="twitter:creator" content="@lesExegetes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://exegetes.eu.org/static/images/banner.png">
+    <!-- Open Graph -->
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="exegetes.eu.org">
+    <meta property="og:description" content="Dossiers contentieux et recours des exégètes amateurs (FDN, La Quadrature du Net, Fédération FDN)">
+    <meta property="og:url" content="https://exegetes.eu.org/">
+    <meta property="og:site_name" content="exegetes.eu.org">
+    <meta property="og:image" content="https://exegetes.eu.org/static/images/banner.png">
+    <link rel="canonical" href="https://exegetes.eu.org/">
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="exegetes.eu.org Feed">
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="{{ '/static/css/main.css'|url }}">
+    <meta http-equiv="cleartype" content="on">
+    <!-- HTML5 Shiv and Media Query Support -->
+    <!--[if lt IE 9]>
+        <script src="{{ '/static/js/vendor/html5shiv.min.js'|url }}"></script>
+        <script src="{{ '/static/js/vendor/respond.min.js'|url }}"></script>
+    <![endif]-->
+    <!-- Modernizr -->
+    <script src="{{ '/static/js/vendor/modernizr-2.7.1.custom.min.js'|url }}"></script>
+</head>
+
+<body class="{% block body_class %}page{% endblock %}">
+    <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+    <div class="navigation-wrapper">
+        <div class="site-name">
+            <a href="https://exegetes.eu.org/">exegetes.eu.org</a>
+        </div><!-- /.site-name -->
+        <div class="top-navigation">
+            <nav role="navigation" id="site-nav" class="nav">
+                <ul>
+                    <li><a href="/about/" >À propos</a></li>
+                    <li><a href="/dossiers/" >Dossiers</a></li>
+                    <li><a href="/rp/" >Revue de Presse</a></li>
+                </ul>
+            </nav>
+        </div><!-- /.top-navigation -->
+
+        <div class="right-navigation">
+            <ul role="navigation" id="lang-nav" class="nav">
+                <li><a href="/" >FR</a></li>
+                <li><a href="/en/" >EN</a></li>
+            </ul>
+        </div>
+    </div><!-- /.navigation-wrapper -->
+
+    {% block banner %}
+    {% endblock %}
+
+    <div id="main" role="main">
+
+        <div class="article-author-side">
+            <div itemscope itemtype="http://schema.org/Person">
+                <img src="{{ '/static/images/bio-photo.jpg'|url }}" class="bio-photo" alt="Les exégètes amateurs bio photo">
+                <h3 itemprop="name">Les exégètes amateurs</h3>
+                <p>Groupe d'action juridique et contentieuse commun entre French Data Network (FDN), La Quadrature du Net (LQDN) et la fédération des fournisseurs d'accès à Internet associatifs (Fédération FDN). Depuis décembre 2014.</p>
+                <a href="mailto:contact@exegetes.eu.org" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+                <a href="http://twitter.com/lesExegetes" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+            </div>
+        </div>
+
+        {% block body %}
+        {% endblock %}
+    </div><!-- /#main -->
+
+    <div class="footer-wrap">
+        <footer>
+            Fabrication artisanale d’adresses hypées. <a href="/mentions-legales/">Mentions légales</a>
+            <br />
+            <a href="/amateurs/">Connexion</a>
+        </footer>
+    </div><!-- /.footer-wrap -->
+
+    <script src="{{ '/static/js/vendor/jquery-1.9.1.min.js'|url }}"></script>
+    <script src="{{ '/static/js/scripts.min.js'|url }}"></script>
+
+</body>
+</html>
