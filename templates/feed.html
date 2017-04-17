@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">exegetes.eu.org</title>
+<link rel="self" type="application/atom+xml" href="https://exegetes.eu.org/feed.xml" />
+<link rel="alternate" type="text/html" href="https://exegetes.eu.org" />
+
+{% for child in this.parent.pagination.items %}
+    {% if child._data._model == "posts" %}
+        {% for post in child.pagination.items|rejectattr("private") %}
+            {% if loop.index == 1 %}
+                <updated>{{ post.pub_date }}</updated>
+                <id>https://exegetes.eu.org/</id>
+                <author>
+                  <name>Les exégètes amateurs</name>
+                  <uri>https://exegetes.eu.org/</uri>
+                  <email>contact@exegetes.eu.org</email>
+                </author>
+            {% endif %}
+            {% if loop.index <= 10 %}
+                <entry>
+                  <title type="html"><![CDATA[{{ post.title }}]]></title>
+                  <link rel="alternate" type="text/html" href="https://exegetes.eu.org/{{ post|url }}"/>
+                  <id>https://exegetes.eu.org/{{ post|url }}</id>
+                  <published>{{ post.pub_date }}</published>
+                  <updated>{{ post.pub_date }}</updated>
+                  <author>
+                    <name>Les exégètes amateurs</name>
+                    <uri>https://exegetes.eu.org</uri>
+                    <email>contact@exegetes.eu.org</email>
+                  </author>
+                  <content type="html">
+                    {{ post.body|forceescape }}
+                  </content>
+                </entry>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+</feed>
