@@ -1,2 +1,13 @@
 [project]
 name = exegetes.eu.org
+url_style = relative
+
+[alternatives.fr]
+primary = yes
+name = French
+locale = fr
+
+[alternatives.en]
+name = English
+url_prefix = /en/
+locale = en_US

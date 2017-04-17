@@ -52,9 +52,9 @@
         <div class="top-navigation">
             <nav role="navigation" id="site-nav" class="nav">
                 <ul>
-                    <li><a href="/about/" >À propos</a></li>
-                    <li><a href="/dossiers/" >Dossiers</a></li>
-                    <li><a href="/rp/" >Revue de Presse</a></li>
+          {% for id, item in bag('menu').iteritems() %}
+            <li{% if this.is_child_of(item.path) %} class="active"{% endif %}><a href="{{ item.path|url }}">{% if this.alt == 'fr' %}{{ item.label }}{% else %}{{ item.label_en }}{% endif %}</a></li>
+            {% endfor %}
                 </ul>
             </nav>
         </div><!-- /.top-navigation -->
@@ -76,7 +76,7 @@
             <div itemscope itemtype="http://schema.org/Person">
                 <img src="{{ '/static/images/bio-photo.jpg'|url }}" class="bio-photo" alt="Les exégètes amateurs bio photo">
                 <h3 itemprop="name">Les exégètes amateurs</h3>
-                <p>Groupe d'action juridique et contentieuse commun entre French Data Network (FDN), La Quadrature du Net (LQDN) et la fédération des fournisseurs d'accès à Internet associatifs (Fédération FDN). Depuis décembre 2014.</p>
+                <p>{{ bag('description', this.alt, 'description') }}</p>
                 <a href="mailto:contact@exegetes.eu.org" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
                 <a href="http://twitter.com/lesExegetes" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
             </div>
@@ -90,7 +90,6 @@
         <footer>
             Fabrication artisanale d’adresses hypées. <a href="/mentions-legales/">Mentions légales</a>
             <br />
-            <a href="/amateurs/">Connexion</a>
         </footer>
     </div><!-- /.footer-wrap -->
 
